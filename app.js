@@ -1,9 +1,23 @@
+let nextTaskId = 100; // ! helper za kreiranje IDjeva
+
 const app = Vue.createApp({
   emits: ["added"],
   data() {
-    return {};
+    return {
+      tasks: [],
+    };
   },
-  methods: {},
+  methods: {
+    taskAdded(task) {
+      this.tasks.push({
+        id: nextTaskId++,
+        description: task,
+        done: false,
+        priority: false,
+      });
+      this.task = "";
+    },
+  },
   computed: {},
 });
 
