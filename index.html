@@ -15,9 +15,22 @@
 
   <body class="bg-gray-50 text-gray-800">
     <div id="app" class="p-8 w-3/4 mx-auto">
-      <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+      <div class="mb-4">
         <add-task-input @added="taskAdded"></add-task-input>
-        <todo-list-item v-for="task in tasks" :key="task.id" :task="task" />
+        <base-checkbox
+          label="Only pending tasks"
+          class="mb-4 p-4 text-gray-600 text-sm font-weight-100"
+          v-model="onlyPending"
+        >
+        </base-checkbox>
+      </div>
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <todo-list-item
+          v-for="task in displayedTasks"
+          :task="task"
+          :key="task.id"
+        >
+        </todo-list-item>
       </div>
     </div>
   </body>
