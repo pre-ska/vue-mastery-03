@@ -17,9 +17,7 @@
     <div id="app" class="p-8 w-3/4 mx-auto">
       <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
         <add-task-input @added="taskAdded"></add-task-input>
-        <todo-list-item task="Buy food"></todo-list-item>
-        <todo-list-item task="Buy clothes"></todo-list-item>
-        <todo-list-item task="Buy some courses"></todo-list-item>
+        <todo-list-item v-for="task in tasks" :key="task.id" :task="task" />
       </div>
     </div>
   </body>

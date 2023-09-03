@@ -24,7 +24,7 @@ const app = Vue.createApp({
 app.component("todo-list-item", {
   props: {
     task: {
-      type: String,
+      type: Object,
       required: true,
       // validator(value) { // ! validator radi samo u dev enviromentu i baci warning u konzoli
       //   return value.length > 0;
@@ -45,7 +45,7 @@ app.component("todo-list-item", {
   <div 
     class="bg-white shadow-sm rounded-md text-gray-700 text-xs md:text-sm p-4"
   >
-    {{ task }}
+    {{ task.description }}
   </div>`,
 });
 
