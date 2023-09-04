@@ -58,6 +58,8 @@ app.component("todo-list-item", {
       //   return "Okay" === value;
       // }
     },
+    done: Boolean,
+    priority: Boolean,
     // id: {
     //   required: false,
     //   type: Number,
@@ -69,6 +71,7 @@ app.component("todo-list-item", {
     //   // }
     // }
   },
+  emits: ["update:done", "update:priority"],
   template: `<div 
     class="bg-white shadow-sm rounded-md text-gray-700 text-xs md:text-sm p-4">
       {{task.description}}
