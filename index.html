@@ -29,6 +29,8 @@
           v-for="task in displayedTasks"
           :task="task"
           :key="task.id"
+          v-model:done="task.done"
+          v-model:priority="task.priority"
         >
         </todo-list-item>
       </div>
